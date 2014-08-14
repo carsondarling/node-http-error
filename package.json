@@ -1,6 +1,6 @@
 {
   "name": "node-http-error",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Error subclasses for returning HTTP errors",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,9 @@
     "type": "git",
     "url": "https://github.com/carsondarling/node-http-errors"
   },
-  "keywords": ["error", "status code", "http"]
+  "keywords": [
+    "error",
+    "status code",
+    "http"
+  ]
 }
