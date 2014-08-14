@@ -1,0 +1,11 @@
+{
+  "name": "node-http-error",
+  "version": "0.1.0",
+  "description": "Error subclasses for returning HTTP errors",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Carson Darling",
+  "license": "MIT"
+}
