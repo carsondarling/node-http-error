@@ -1,6 +1,6 @@
 {
   "name": "node-http-error",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Error subclasses for returning HTTP errors",
   "main": "index.js",
   "scripts": {
