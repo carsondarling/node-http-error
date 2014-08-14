@@ -2,14 +2,14 @@
 
 Ever wanted to build an API with Node and constantly had to either use blocks to return errors so you could attach a status code, or you just use one type of status code for all errors? Now you can throw your errors in just one line.
 
-`npm install node-http-errors`
+`npm install node-http-error`
 
-[![Build Status](https://travis-ci.org/carsondarling/node-http-errors.svg?branch=master)](https://travis-ci.org/carsondarling/node-http-errors)
+[![Build Status](https://travis-ci.org/carsondarling/node-http-error.svg?branch=master)](https://travis-ci.org/carsondarling/node-http-errors)
 
 ## Example
 
 ```javascript
-var HTTPError = require('node-http-errors');
+var HTTPError = require('node-http-error');
 var app = require('express')();
 
 app.get('/error', function(req, req, next) {
