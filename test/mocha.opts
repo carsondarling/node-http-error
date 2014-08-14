@@ -1,0 +1,5 @@
+--recursive
+--require should
+-R spec
+--ui nyan
+--ui bdd
