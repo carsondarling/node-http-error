@@ -35,8 +35,8 @@ app.use(function(err, req, res, next) {
   }}
 
   if (err instanceof HTTPError) {
-    res.status(err.code);
-    output.error.code = err.code;
+    res.status(err.status);
+    output.error.status = err.status;
   }
 
   res.send(output);

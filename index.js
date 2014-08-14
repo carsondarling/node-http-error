@@ -25,7 +25,7 @@ var HTTPError = module.exports = function HTTPError(status, message) {
   
   // Setup error details
   this.name = this.constructor.name;
-  this.code = status || 500;
+  this.status = status || 500;
   this.message = message || '';
 };
 
@@ -33,7 +33,7 @@ util.inherits(HTTPError, Error);
 
 // Formatting for error message
 HTTPError.prototype.toString = function() {
-  return this.name + ': ' + this.code + ' ' + this.message;
+  return this.name + ': ' + this.status + ' ' + this.message;
 };
 
 

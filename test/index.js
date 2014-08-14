@@ -17,7 +17,7 @@ describe('HTTPError', function() {
     var err = HTTPError(400, 'test');
     (err instanceof HTTPError).should.be.true;
     err.message.should.eql('test');
-    err.code.should.eql(400);
+    err.status.should.eql(400);
   });
 
   it('should have the correct message', function() {
@@ -27,19 +27,19 @@ describe('HTTPError', function() {
 
   it('should have the correct status code', function() {
     var err = new HTTPError(404, 'Not found!');
-    err.should.have.property('code');
-    err.code.should.eql(404);
+    err.should.have.property('status');
+    err.status.should.eql(404);
   });
 
   it('should allow just a message', function() {
     var err = new HTTPError('test');
     err.message.should.eql('test');
-    err.code.should.eql(500);
+    err.status.should.eql(500);
   });
 
   it('should allow just a status code', function() {
     var err = new HTTPError(404);
-    err.code.should.eql(404);
+    err.status.should.eql(404);
   });
 
   it('should look up the correct status codes', function() {
