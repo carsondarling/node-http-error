@@ -4,7 +4,7 @@ var util = require('util');
 var http;
 
 
-var HTTPError = module.exports = function HTTPError(status, message) {
+var HTTPError = module.exports = function HTTPError(status, message, properties) {
   // Make sure we're using the 'new' keyword
   if (!(this instanceof HTTPError)) return new HTTPError(status, message);
   
@@ -27,6 +27,7 @@ var HTTPError = module.exports = function HTTPError(status, message) {
   this.name = this.constructor.name;
   this.status = status || 500;
   this.message = message || '';
+  Object.assign(this, properties);
 };
 
 util.inherits(HTTPError, Error);
