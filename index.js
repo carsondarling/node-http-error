@@ -27,7 +27,7 @@ var HTTPError = module.exports = function HTTPError(status, message, properties)
   this.name = this.constructor.name;
   this.status = status || 500;
   this.message = message || '';
-  Object.assign(this, properties);
+  util._extend(this, properties);
 };
 
 util.inherits(HTTPError, Error);
