@@ -44,8 +44,14 @@ Error by design.
 - Treat it just like `Error`. `HTTPError`'s are throwable, have full stacktrace, and even print out their status code when they're thrown.
 - Don't worry about accidentally forgetting the `new` operator, HTTPError works without it.
 - Give it just the HTTP status code you want to return, and the error message is automatically generated.
+- Assign extra properties to the error.
 
 ## Usage
+
+#### `HTTPError(status, message, properties)`
+Creates an error with the given status, message and properties. For example
+
+       new HTTPError(404, 'Not found!', { path: '/something-missing' })
 
 #### `HTTPError(status, message)`
 Creates an error message with the given status and message.

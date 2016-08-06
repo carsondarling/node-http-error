@@ -52,4 +52,11 @@ describe('HTTPError', function() {
     }
   });
 
+  it('should allow extra error properties', function() {
+    var err = new HTTPError(404, 'Not found!', { path: '/something-missing' });
+    err.should.have.property('status', 404);
+    err.should.have.property('message', 'Not found!');
+    err.should.have.property('path', '/something-missing');
+  });
+
 });
