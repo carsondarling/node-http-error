@@ -7,7 +7,7 @@ var http;
 var HTTPError = module.exports = function HTTPError(status, message, properties) {
   // Make sure we're using the 'new' keyword
   if (!(this instanceof HTTPError)) return new HTTPError(status, message);
-  
+
   // Do the argument shuffle. If a status code is given but no message, look up
   // the message from the Node.js HTTP module
   if (typeof status !== 'number') {
@@ -22,10 +22,10 @@ var HTTPError = module.exports = function HTTPError(status, message, properties)
 
   Error.call(this); //super constructor
   Error.captureStackTrace(this, this.constructor);
-  
+
   // Setup error details
   this.name = this.constructor.name;
-  this.status = status || 500;
+  this.status = this.statusCode = status || 500;
   this.message = message || '';
   util._extend(this, properties);
 };
@@ -36,5 +36,3 @@ util.inherits(HTTPError, Error);
 HTTPError.prototype.toString = function() {
   return this.name + ': ' + this.status + ' ' + this.message;
 };
-
-
