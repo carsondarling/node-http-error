@@ -31,6 +31,12 @@ describe('HTTPError', function() {
     err.status.should.eql(404);
   });
 
+  it('should allow statusCode as well as status', function() {
+    var err = new HTTPError(404, 'Not found!');
+    err.should.have.property('statusCode');
+    err.statusCode.should.eql(err.status);
+  });
+
   it('should allow just a message', function() {
     var err = new HTTPError('test');
     err.message.should.eql('test');

@@ -18,7 +18,7 @@ app.get('/error', function(req, req, next) {
 
 // Error handler
 app.use(function(err, req, res, next) {
-  res.status(err.status);
+  res.status(err.status); // or use err.statusCode instead
   res.send(err.message);
 });
 
