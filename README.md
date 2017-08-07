@@ -60,6 +60,6 @@ Creates an error message with the given status and message.
 Creates an error message with the message and `500` as the status code (Internal Server Error).
 
 #### `HTTPError(status)`
-Creates an error message with the given status. The error message is looked up from the default Node HTTP module. For example, `HTTPError(404)` is equivalent to `HTTPError(400, 'Not Found')`.
+Creates an error message with the given status. The error message is looked up from the default Node HTTP module. For example, `HTTPError(404)` is equivalent to `HTTPError(404, 'Not Found')`.
 
 The Node HTTP module is not loaded unless needed to lookup the error message.
