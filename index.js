@@ -1,5 +1,3 @@
-var util = require('util');
-
 // Use lazy loading of the HTTP module only if we need to look up status codes
 var http;
 
@@ -27,10 +25,14 @@ var HTTPError = module.exports = function HTTPError(status, message, properties)
   this.name = this.constructor.name;
   this.status = this.statusCode = status || 500;
   this.message = message || '';
-  util._extend(this, properties);
+  Object.assign(this, properties);
 };
 
-util.inherits(HTTPError, Error);
+
+// Set up inheritance
+HTTPError.prototype = Object.create(Error.prototype);
+HTTPError.prototype.constructor = HTTPError;
+
 
 // Formatting for error message
 HTTPError.prototype.toString = function() {
